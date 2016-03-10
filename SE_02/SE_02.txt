@@ -1,0 +1,16 @@
+  write "请输入一个数字："
+  read Number
+  if Number less_then 2 goto FAIL
+  if Number is 2 goto SUCCESS
+  set Divisor 2
+LOOP_BEGIN:
+  if Number is Divisor goto SUCCESS
+  mod Remainder Number Divisor
+  if Remainder is 0 goto FAIL
+  add Divisor Divisor 1
+  goto LOOP_BEGIN
+SUCCESS:
+  writeln Number "是质数。"
+  exit
+FAIL:
+  writeln Number "不是质数。"
