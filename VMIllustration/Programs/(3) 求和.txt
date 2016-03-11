@@ -1,0 +1,24 @@
+function main
+param
+var i,r
+  push 0
+  store r
+  push 1
+  store i
+BEGIN:
+  load i
+  push 5
+  gt
+  jmpt END
+  load i
+  load r
+  add
+  store r
+  load i
+  push 1
+  add
+  store i
+  jmp BEGIN
+END:
+  load r
+  ret

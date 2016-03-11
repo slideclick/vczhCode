@@ -1,0 +1,27 @@
+function fab
+param i
+var
+  load i
+  push 2
+  lt
+  jmpf RECURSION
+  push 1
+  ret
+RECURSION:
+  load i
+  push 2
+  sub
+  call fab
+  load i
+  push 1
+  sub
+  call fab
+  add
+  ret
+
+function main
+param
+var
+  push 3
+  call fab
+  ret

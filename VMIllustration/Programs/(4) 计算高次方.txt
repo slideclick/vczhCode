@@ -1,0 +1,32 @@
+function pow
+param num,exp
+var r,i
+  push 1
+  store r
+  push 1
+  store i
+BEGIN:
+  load i
+  load exp
+  gt
+  jmpt END
+  load r
+  load num
+  mul
+  store r
+  load i
+  push 1
+  add
+  store i
+  jmp BEGIN
+END:
+  load r
+  ret
+
+function main
+param
+var
+  push 3
+  push 2
+  call pow
+  ret

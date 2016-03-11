@@ -1,0 +1,40 @@
+function sign
+param i
+var r
+IF_POSITIVE:
+  load i
+  push 0
+  gt
+  jmpf IF_ZERO
+  push 1
+  store r
+  jmp IF_END
+IF_ZERO:
+  load i
+  push 0
+  equ
+  jmpf IF_NEGATIVE
+  push 0
+  store r
+  jmp IF_END
+IF_NEGATIVE:
+  push -1
+  store r
+IF_END:
+  load r
+  ret
+
+function main
+param
+var
+  push 5
+  call sign
+  pop 1
+  push 0
+  call sign
+  pop 1
+  push -4
+  call sign
+  pop 1
+  push 0
+  ret
